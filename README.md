@@ -101,4 +101,4 @@ I've added three more parameter selectors to the App:
 - **Initial Sum**
 - **Monthly Sum**
 
-You can generate different reports changing their values.
+With these three selectors, the user can generate different reports changing their values.
