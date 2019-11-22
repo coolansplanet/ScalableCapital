@@ -1,29 +1,28 @@
 import React from "react";
-import { Chart as ChartJs } from "chart.js";
 import { generateChartConfig } from "../helpers";
-import { getCones } from "../../core/provider";
+import { chartOptions as options } from "../constants";
 import { Line } from "react-chartjs-2";
 import "./Chart.scss";
 
 export default class Chart extends React.Component {
   constructor() {
     super();
-    this.state = { config: null };
+    this.state = { data: null };
   }
   componentDidMount() {
     if (this.props.cones.length > 0) {
-      const config = generateChartConfig(this.props);
-      this.setState({ config });
+      const data = generateChartConfig(this.props);
+      this.setState({ data });
     }
   }
 
   render() {
     return (
       <div className="chart">
-        {this.state.config && (
+        {this.state.data && (
           <Line
-            data={this.state.config.data}
-            options={this.state.config.options}
+            data={this.state.data}
+            options={options}
             width={700}
             height={450}
           />

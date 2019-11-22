@@ -1,10 +1,5 @@
 import { generateReport } from "../../common/helpers";
-import {
-  chartOptions as options,
-  chartGoods,
-  chartMedians,
-  chartBads
-} from "../constants";
+import { chartGoods, chartMedians, chartBads } from "../constants";
 
 export default ({ cones, riskLevel, years, initialSum, monthlySum }) => {
   const labels = [];
@@ -20,7 +15,7 @@ export default ({ cones, riskLevel, years, initialSum, monthlySum }) => {
       labels.push(i % 12 == 0 ? i / 12 : "");
     }
   );
-  const data = {
+  return {
     datasets: [
       {
         ...chartGoods,
@@ -36,11 +31,5 @@ export default ({ cones, riskLevel, years, initialSum, monthlySum }) => {
       }
     ],
     labels
-  };
-
-  return {
-    type: "line",
-    data,
-    options
   };
 };
