@@ -1,0 +1,15 @@
+@import "../../common/helpers/colors.scss";
+
+.app {
+  background-color: $board;
+  border-radius: 4px;
+  box-shadow: 0 0 50px $light-blue;
+  display: grid;
+  grid-template-columns: 700px;
+  grid-template-rows: 54px 80px auto;
+  gap: 40px;
+  justify-content: center;
+  padding: 50px 0 50px 0;
+  min-height: 80vh;
+  margin: 10vh 0 10vh 0;
+}

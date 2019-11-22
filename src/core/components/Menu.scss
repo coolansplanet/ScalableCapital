@@ -1,0 +1,48 @@
+@import "../../common/helpers/colors";
+
+.core__menu {
+  $buttons-width: 170px;
+  $buttons-height: 54px;
+  $button-martin: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, $buttons-width);
+  grid-template-rows: $buttons-height;
+  justify-content: center;
+  gap: 40px;
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    background-color: $light-blue;
+    font-weight: 700;
+    color: $board;
+    text-align: center;
+    text-decoration: none;
+    line-height: $buttons-height;
+    border-radius: 3px;
+    transition: box-shadow 200ms;
+    &::before {
+      content: "";
+      position: absolute;
+      width: $buttons-width + $button-martin;
+      height: $buttons-height + $button-martin;
+      display: inline-block;
+      border: 1px solid rgba($light-blue, 0);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 4px;
+      transition: border-color 300ms;
+    }
+    &.active::before {
+      border-color: rgba($light-blue, 1);
+    }
+    &:hover {
+      box-shadow: 0 0 10px $light-blue;
+    }
+    &:active {
+      box-shadow: 0 0 0 transparent;
+    }
+  }
+}

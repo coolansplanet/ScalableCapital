@@ -1,0 +1,26 @@
+@import "../../common/helpers/colors";
+
+.core__custom-selector {
+  text-align: center;
+  font-weight: 700;
+  color: $dark-gray;
+  &__label {
+    display: block;
+    text-align: center;
+    line-height: 2em;
+  }
+  &__selector {
+    cursor: pointer;
+    width: 70%;
+    background-color: transparent;
+    border: 2px solid $dark-gray;
+    height: 2.5em;
+    border-radius: 5px;
+    padding-right: 1em;
+    color: $dark-gray;
+  }
+  &__option {
+    background-color: $board;
+    font-weight: 700;
+  }
+}
