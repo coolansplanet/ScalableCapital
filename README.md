@@ -85,6 +85,8 @@ I've followed the [BEM](https://getbem.com/naming/) naming convention to name th
 
 For number formatting (splitting thousands with commas and reducing the decimals to only 2 digits) I've installed the `numbro` library.
 
+I've replaced `chart.js` with `react-chartjs-2`, which is much easier and intuitive to use in this project (specially when refreshing the displayed data).
+
 In the links, I've replaced `Link` by `NavLink` with the purpose of get a different class name in the active links and therefore style them properly.
 
 During the refactoring and code cleanup, it was necessary to make some **tests** to check the accuracy of the reports and results (besides it was required by this assessment). Since after the refactoring and code cleanup, the logic of the report generator is mainly located in the `src/common/helpers/generateReports.js` file, I've created some tests to assure the accuracy of its reports. You can find all the tests on the `src/test` module.
