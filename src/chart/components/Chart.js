@@ -24,7 +24,14 @@ export default class Chart extends React.Component {
   render() {
     return (
       <div className="chart">
-        <Line {...this.state.config} width={700} height={450} />
+        {this.state.config && (
+          <Line
+            data={this.state.config.data}
+            options={this.state.config.options}
+            width={700}
+            height={450}
+          />
+        )}
       </div>
     );
   }
