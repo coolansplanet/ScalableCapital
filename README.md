@@ -56,17 +56,17 @@ Each module has an `index.js` in order to give other modules an easy access to t
 
 The reason why I decided this architecture, is to make it easy to scale and mantain. It's necessary to spread responsabilities among the objects, functions and components to accomplish a robust app.
 
-I splitted the Table component in three different ones: `Table`, `TableHeader` and `TableBody`. It's important to mantain files splitted and smaller, due when there's many developers working on the same project, small and splitted files have less probabilities to result in code conflicts, and in case of having one, it's easier to solve.
+I splitted the `Table` component in three different ones: `Table`, `TableHeader` and `TableBody`. It's important to mantain files splitted and smaller, due when there's many developers working on the same project, small and splitted files have less probabilities to result in code conflicts, and in case of having one, it's easier to solve.
 
-I've also decoupled lots of functions from components and move them into _helpers_ folders. I've found lots of unnecessary code, repeating itself. I had to do a huge cleanup.
+I've also decoupled lots of functions from components and move them into **helpers** folders. I've found lots of unnecessary code, repeating itself. I had to do a huge cleanup.
 
-Same with constants: I've decoupled most of them from the components and moved them into the apropiated _constants_ folders.
+Same with constants: I've decoupled most of them from the components and moved them into the apropiated **constants** folders.
 
 Component names were also changed, removing dashes, turning them into camel case, and beginning each name with capital letters, in order to follow conventions and good practices.
 
 I've found a few bugs in the project (i.e.: numbers below the 3 in the Risk Level selector which throw an error), and they were solved.
 
-In order to style the project with _SASS_, I had to first do some configuration in webpack, adding the following lines on `/webpack.config.js`:
+In order to style the project with **SASS**, I had to first do some configuration in **webpack**, adding the following lines on `/webpack.config.js`:
 
 ```
       {
@@ -87,7 +87,7 @@ For number formatting (splitting thousands with commas and reducing the decimals
 
 In the links, I've replaced `Link` by `NavLink` with the purpose of get a different class name in the active links and therefore style them properly.
 
-During the refactoring and code cleanup, it was necessary to make some tests to check the accuracy of the reports and results (besides it was required by this assessment). Since after the refactoring and code cleanup, the logic of the report generator is mainly located in the `src/common/helpers/generateReports.js` file, I've created some tests to assure the accuracy of its reports. You can find all the tests on the `src/test` module.
+During the refactoring and code cleanup, it was necessary to make some **tests** to check the accuracy of the reports and results (besides it was required by this assessment). Since after the refactoring and code cleanup, the logic of the report generator is mainly located in the `src/common/helpers/generateReports.js` file, I've created some tests to assure the accuracy of its reports. You can find all the tests on the `src/test` module.
 
 ## Task 2 - Integrate an API
 
