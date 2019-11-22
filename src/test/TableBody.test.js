@@ -6,7 +6,7 @@ afterEach(() => {
   cleanup();
 });
 
-test("Table body shows only (and ALWAYS) two decimals, and rounds them accurately", () => {
+test("Table body fixed numbers in two decimals, and split thousands with commas", () => {
   const data = [
     { month: 1, dataGood: 4.001, dataMedian: 4.997, dataBad: 7 },
     { month: 2, dataGood: 9.019, dataMedian: 9.997, dataBad: 9 },
@@ -23,13 +23,11 @@ test("Table body shows only (and ALWAYS) two decimals, and rounds them accuratel
       <TableBody data={data} />
     </table>
   );
-  //queryByTagName("tr").toHaveLength(3);
   expect(getByText("4.00")).toBeTruthy();
   expect(getByText("5.00")).toBeTruthy();
   expect(getByText("7.00")).toBeTruthy();
   expect(getByText("9.02")).toBeTruthy();
   expect(getByText("10.00")).toBeTruthy();
-  //checking thousands with commas:
   expect(getByText("12,000.00")).toBeTruthy();
   expect(getByText("14,000,000.00")).toBeTruthy();
   expect(getByText("12,001.00")).toBeTruthy();
