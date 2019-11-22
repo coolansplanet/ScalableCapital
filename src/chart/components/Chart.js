@@ -2,15 +2,19 @@ import React from "react";
 import { Chart as ChartJs } from "chart.js";
 import { generateChartConfig } from "../helpers";
 import { getCones } from "../../core/provider";
+import { Line } from "react-chartjs-2";
 import "./Chart.scss";
 
 export default class Chart extends React.Component {
+  constructor() {
+    super();
+    this.state = { config: null };
+  }
   componentDidMount() {
     getCones()
       .then(response => {
         const config = generateChartConfig(response.data, this.props);
-        const context = this.canvas.getContext("2d");
-        const myChart = new ChartJs(context, config);
+        this.setState({ config });
       })
       .catch(error => {
         console.error(error);
@@ -20,7 +24,7 @@ export default class Chart extends React.Component {
   render() {
     return (
       <div className="chart">
-        <canvas ref={ref => (this.canvas = ref)} width={700} height={450} />
+        <Line {...this.state.config} width={700} height={450} />
       </div>
     );
   }
