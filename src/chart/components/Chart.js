@@ -11,14 +11,10 @@ export default class Chart extends React.Component {
     this.state = { config: null };
   }
   componentDidMount() {
-    getCones()
-      .then(response => {
-        const config = generateChartConfig(response.data, this.props);
-        this.setState({ config });
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    if (this.props.data.length > 0) {
+      const config = generateChartConfig(this.props.data, this.props);
+      this.setState({ config });
+    }
   }
 
   render() {
