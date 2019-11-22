@@ -18,7 +18,7 @@ test("Table body shows only (and ALWAYS) two decimals, and rounds them accuratel
     }
   ];
 
-  const { getByText, queryByTagName } = render(
+  const { getByText } = render(
     <table>
       <TableBody data={data} />
     </table>
