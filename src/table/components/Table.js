@@ -11,16 +11,10 @@ class Table extends React.Component {
     this.state = { data: [] };
   }
   componentDidMount() {
-    const {
-      riskLevel,
-      years,
-      initialSum,
-      monthlySum,
-      data: receivedData
-    } = this.props;
-    if (receivedData.length > 0) {
+    const { riskLevel, years, initialSum, monthlySum, cones } = this.props;
+    if (cones.length > 0) {
       const data = generateReport(
-        receivedData,
+        cones,
         riskLevel,
         years,
         initialSum,

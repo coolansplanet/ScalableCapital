@@ -13,13 +13,13 @@ export default class App extends React.Component {
       years: 10,
       initialSum: 10000,
       monthlySum: 200,
-      data: []
+      cones: []
     };
   }
   componentDidMount() {
     getCones()
       .then(response => {
-        this.setState({ data: response.data });
+        this.setState({ cones: response.data });
       })
       .catch(error => {
         console.error(error);

@@ -6,7 +6,7 @@ import {
   chartBads
 } from "../constants";
 
-export default (cones, { riskLevel, years, initialSum, monthlySum }) => {
+export default ({ cones, riskLevel, years, initialSum, monthlySum }) => {
   const labels = [];
   const medians = [];
   const goods = [];

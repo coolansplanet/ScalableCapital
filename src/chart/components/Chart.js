@@ -11,8 +11,8 @@ export default class Chart extends React.Component {
     this.state = { config: null };
   }
   componentDidMount() {
-    if (this.props.data.length > 0) {
-      const config = generateChartConfig(this.props.data, this.props);
+    if (this.props.cones.length > 0) {
+      const config = generateChartConfig(this.props);
       this.setState({ config });
     }
   }
